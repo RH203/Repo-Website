@@ -16,9 +16,17 @@ input, button {
     padding: 12px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: cornflowerblue;
     color: white;
+}
+
+.head_bar p {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration-line: underline;
 }
 
 main {
