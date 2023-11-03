@@ -8,5 +8,4 @@
 </ul>
 
 # Status
-![Progress]( https://progress-bar.dev/25/?title=Progress)
-
+![Progress]( https://progress-bar.dev/28/?title=Progress)
