@@ -1,24 +1,31 @@
 // Declare variables
-const title = document.getElementById("inputBookTitle");
-const author = document.getElementById("inputBookAuthor");
-const year = document.getElementById("inputBookYear");
-const isComplete = document.getElementById("inputBookIsComplete").checked;
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const buttonBookSubmit = document.getElementById('bookSubmit'); // Book Submit
-const buttonSearchSubmit = document.getElementById('searchSubmit'); // Search submit button
-// Declare variables
+const buttonBookSubmit = document.getElementById("bookSubmit");
+const buttonSearchSubmit = document.getElementById("searchSubmit");
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+]; // days
 
-let time = setInterval(updateTime, 1000); // Time
+// Function Time
+let time = setInterval(updateTime, 1000);
 function updateTime() {
   const date = new Date();
   const hours = date.getHours(),
     minutes = date.getMinutes(),
     seconds = date.getSeconds(),
     dayNow = date.getDay();
-  document.getElementById("clock").innerText = `${days[dayNow]} ${hours}:${minutes}:${seconds}`;
+  document.getElementById(
+    "clock"
+  ).innerText = `${days[dayNow]} ${hours}:${minutes}:${seconds}`;
 }
 
-function init () {
+// Function initialization session storage
+function init (title, author, year, isComplete) {
   if (sessionStorage.getItem(title) === null) {
     sessionStorage.setItem(title, "");
   }
@@ -33,7 +40,18 @@ function init () {
   }
 }
 
-window.addEventListener("load", function () { // Initialization session storage
+// Function finish read
+function finishRead () {
+  
+}
+
+
+
+// Function unfinished read
+// Function edit book
+
+// Initialization session storage
+window.addEventListener("load", function () {
   if (typeof Storage !== "undefined") {
     init();
   } else {
@@ -41,21 +59,26 @@ window.addEventListener("load", function () { // Initialization session storage
   }
 }); // End function
 
-// Event
-buttonBookSubmit.addEventListener('click', function () {
-  const titleBook = title.value,
-  authorBook = author.value,
-  yearBook = year.value,
-  isCompleteCheck = isComplete;
-  if (titleBook !== null && authorBook !== null && yearBook !== null && isCompleteCheck !== null) {
+// Event button submit
+buttonBookSubmit.addEventListener("click", function () {
+  const title = document.getElementById("inputBookTitle").value;
+  const author = document.getElementById("inputBookAuthor").value;
+  const year = document.getElementById("inputBookYear").value;
+  const isComplete = document.getElementById("inputBookIsComplete").checked;
+  
+  if (title === "" && author === "" && year === 0 || isComplete === false) {
+    init(title, author, year, isComplete)
+  } else {
     sessionStorage.setItem("key", +new Date());
-    sessionStorage.setItem("title", titleBook);
-    sessionStorage.setItem("author", authorBook);
-    sessionStorage.setItem("year",yearBook);
-    if (isCompleteCheck === true) {
-      sessionStorage.setItem("isComplete", isCompleteCheck);
-    } else {
-      sessionStorage.setItem("isComplete", isCompleteCheck);
-    }
+    sessionStorage.setItem("title", title);
+    sessionStorage.setItem("author", author);
+    sessionStorage.setItem("year", year);
+      if (isComplete === true) {
+        sessionStorage.setItem("isCompleted", true);
+      } else {
+        sessionStorage.setItem("isCompleted", false);
+      }
   }
-}) // Event
+}); // Event submit button end
+
+
