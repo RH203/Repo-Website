@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Repository Website Development
 
 ## This repository uses several programming languages:
@@ -35,4 +36,3 @@
 </p>
     </li>
 </ul>
-
