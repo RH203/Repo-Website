@@ -178,7 +178,7 @@ main {
 }
 
 .book_shelf > .book_list > .book_item > .action > .blue {
-    background-color: cornflowerblue;
+    background-color: darkblue;
     color: white;
 }
 
