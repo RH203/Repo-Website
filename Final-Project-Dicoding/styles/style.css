@@ -182,13 +182,15 @@ main {
     color: white;
 }
 
-#editIncompleteBookShelfList {
+#editIncompleteBookShelfList,
+#editCompleteBookShelfList {
     display: grid;
     grid-template-columns: auto auto;
     gap: 8px;
 }
 
-#editIncompleteBookShelfList .edit_button {
+#editIncompleteBookShelfList .edit_button,
+#editCompleteBookShelfList .edit_button {
     grid-column: span 2;
     margin: 20px auto;
     background-color: darkgreen;
