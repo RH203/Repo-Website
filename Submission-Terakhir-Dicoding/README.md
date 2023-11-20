@@ -46,7 +46,7 @@ In this project I created a landing page for the coffee shop. This project imple
 5. Open your browser and go to http://localhost:PORT. **Make sure to replace the port with port that matches yours**
 
 ## Status
-!Progress
+![Progress]( https://progress-bar.dev/100/?title=Progress)
 
 ## Gladly welcome feedback and suggestions 
 <div align="left">
