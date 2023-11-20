@@ -20,7 +20,7 @@
 ## Setup Project
 <ol>
     <li>
-    Clone this repo use 
+    ## Clone this repo use 
     ```bash
     git clone https://github.com/RH203/Repo-Website.git
     ```
