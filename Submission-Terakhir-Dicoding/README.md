@@ -20,27 +20,41 @@
 ## Setup Project
 <ol>
     <li>
-    ## Clone this repo use 
+    Clone this repo use 
+      
     ```bash
     git clone https://github.com/RH203/Repo-Website.git
     ```
+    
     or u can use SSH 
     </li>
     <li>
-    Move to the directory you want. Exampel: ```bash
-    Submission-Terakhir-Dicoding``` or 
+    Move to the directory you want. Exampel: 
+    
     ```bash
-    cd Submission-Terakhir-Dicoding```
+    Submission-Terakhir-Dicoding``` or 
+    ```
+    
+    ```bash
+    cd Submission-Terakhir-Dicodin
+    ```
+    
     </li>
     <li>
     Open terminal or powershell and run this command for install all packages npm
+    
     ```bash
-    npm i```
+    npm i or npm install
+    ```
+    
     </li>
     <li>
     After that you run npm start in terminal or powershell, before that make sure you are in the directory "Submission-Terakhir-Dicoding"
+    
     ```bash
-    npm start```
+    npm start
+    ```
+    
     </li>
     <li>
     Open your browser and go to http://localhost:PORT. <strong>Make sure to replace the port with port that matches yours</strong>
