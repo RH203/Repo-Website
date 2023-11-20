@@ -34,7 +34,7 @@ In this project I created a landing page for the coffee shop. This project imple
 3. Open terminal or powershell and run this command for install all packages npm
 
     ```bash
-    npm i
+    npm i or npm install
     ```
 
 4. After that you run npm start in terminal or powershell, before that make sure you are in the directory "Submission-Terakhir-Dicoding"
