@@ -1,6 +1,6 @@
 # This repository is the final project of the course "Learn Basic Web Programming" in Dicoding Indonesia course
 
-<p>In this project I created a landing page for the coffee shop. This project implements flexbox, nav, main, aside, footer, and responsive</p>
+In this project I created a landing page for the coffee shop. This project implements flexbox, nav, main, aside, footer, and responsive.
 
 ## Here's the programming language and IDE I choose for this project
 <div align="left">
@@ -18,52 +18,35 @@
 </div>
 
 ## Setup Project
-<ol>
-    <li>
-    Clone this repo use 
-      
+1. Clone this repo use 
+
     ```bash
     git clone https://github.com/RH203/Repo-Website.git
     ```
-    
-    or u can use SSH 
-    </li>
-    <li>
-    Move to the directory you want. Exampel: 
-    
+
+    or you can use SSH.
+2. Move to the directory you want. Example: 
+
     ```bash
-    Submission-Terakhir-Dicoding``` or 
+    cd Submission-Terakhir-Dicoding
     ```
-    
+
+3. Open terminal or powershell and run this command for install all packages npm
+
     ```bash
-    cd Submission-Terakhir-Dicodin
+    npm i
     ```
-    
-    </li>
-    <li>
-    Open terminal or powershell and run this command for install all packages npm
-    
-    ```bash
-    npm i or npm install
-    ```
-    
-    </li>
-    <li>
-    After that you run npm start in terminal or powershell, before that make sure you are in the directory "Submission-Terakhir-Dicoding"
-    
+
+4. After that you run npm start in terminal or powershell, before that make sure you are in the directory "Submission-Terakhir-Dicoding"
+
     ```bash
     npm start
     ```
-    
-    </li>
-    <li>
-    Open your browser and go to http://localhost:PORT. <strong>Make sure to replace the port with port that matches yours</strong>
-    </li>
-</ol>
+
+5. Open your browser and go to http://localhost:PORT. **Make sure to replace the port with port that matches yours**
 
 ## Status
-![Progress]( https://progress-bar.dev/100/?title=Progress)
-
+!Progress
 
 ## Gladly welcome feedback and suggestions 
 <div align="left">
@@ -77,8 +60,4 @@
 </div>
 
 ## Cons
-<ol>
-<li>
-Still not neat in container size, will be fixed soon.
-</li>
-</ol>
+1. Still not neat in container size, will be fixed soon.
