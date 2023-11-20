@@ -64,16 +64,16 @@
       <section class="book_shelf">
         <h2>Belum selesai dibaca</h2>
 
-        <div id="incompleteBookshelfList" class="book_list">
+        <div id="incompleteBookshelfList" class="book_list" hidden>
           <article class="book_item">
-            <h3>Book Title</h3>
-            <p>Penulis: John Doe</p>
-            <p>Tahun: 2002</p>
+            <h3 class="titleIncompleteList"></h3>
+            <p class="authorIncompleteList"></p>
+            <p class="yearIncompleteList"></p>
           
             <div class="action">
               <button class="green">Selesai dibaca</button>
               <button class="red">Hapus buku</button>
-              <button class="blue">Edit buku</button>
+              <button class="blue" id="editButtonIncomplete">Edit buku</button>
             </div>
           </article>
         </div>
@@ -83,13 +83,13 @@
         <section class="book_shelf" hidden>
           <h2>Menu Edit</h2>
 
-          <div id="editIncompleteBookShelfList">
-            <label for="newTitle">Title:</label>
-            <input id="newTitle" type="text" required>
-            <label for="newAuthor">Author:</label>
-            <input id="newAuthor" type="text" required> 
-            <label for="newYear">Year:</label>
-            <input id="newYear" type="number" required>
+          <div id="editIncompleteBookshelfList">
+            <label for="titleIncomplete">Title:</label>
+            <input id="titleIncomplete" type="text" required>
+            <label for="authorIncomplete">Author:</label>
+            <input id="authorIncomplete" type="text" required> 
+            <label for="yearIncomplete">Year:</label>
+            <input id="yearIncomplete" type="number" required>
             <button class="edit_button" id="editSubmit" type="submit">Save changes</button>
           </div>
         </section>
@@ -98,11 +98,11 @@
         <section class="book_shelf">
           <h2>Selesai dibaca</h2>
         
-          <div id="completeBookshelfList" class="book_list">
+          <div id="completeBookshelfList" class="book_list" hidden>
             <article class="book_item">
-              <h3>Book Title</h3>
-              <p>Penulis: John Doe</p>
-              <p>Tahun: 2002</p>
+              <h3 class="titleCompleteList"></h3>
+              <p class="authorCompleteList"></p>
+              <p class="yearCompleteList"></p>
             
               <div class="action">
                 <button class="green">Belum selesai di Baca</button>
@@ -117,13 +117,13 @@
         <section class="book_shelf" hidden>
           <h2>Menu Edit</h2>
 
-          <div id="editCompleteBookShelfList">
-            <label for="newTitle">Title:</label>
-            <input id="newTitle" type="text" required>
-            <label for="newAuthor">Author:</label>
-            <input id="newAuthor" type="text" required> 
-            <label for="newYear">Year:</label>
-            <input id="newYear" type="number" required>
+          <div id="editCompleteBookshelfList">
+            <label for="titleComplete">Title:</label>
+            <input id="titleComplete" type="text" required>
+            <label for="authorComplete">Author:</label>
+            <input id="authorComplete" type="text" required> 
+            <label for="yearComplete">Year:</label>
+            <input id="yearComplete" type="number" required>
             <button class="edit_button" id="editSubmit" type="submit">Save changes</button>
           </div>
         </section>
