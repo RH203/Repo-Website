@@ -15,8 +15,8 @@ const days = [
 // Function Time
 let time = setInterval(updateTime, 1000);
 function updateTime() {
-  const date = new Date();
-  const hours = date.getHours(),
+  let date = new Date();
+  let hours = date.getHours(),
     minutes = date.getMinutes(),
     seconds = date.getSeconds(),
     dayNow = date.getDay();
@@ -49,22 +49,20 @@ function addValue () {
 
 // Function incomplete read
 function inCompleteRead () {
-  let inCompleteTitle = document.querySelector("titleIncompleteList");
-  let inCompleteAuthor = document.querySelector("authorIncompleteList");
-  let inCompleteYear = document.querySelector("yearIncompleteList");
-  inCompleteTitle.innerText = sessionStorage.getItem("title");
-  inCompleteAuthor.innerText = `Author: ${sessionStorage.getItem("author")}`;
-  inCompleteYear.innerText = `Year: ${sessionStorage.getItem("year")}`;    
+  document.querySelector(".inCompleteHidden").removeAttribute("hidden");
+  
+  document.querySelector(".inCompleteTitle").innerText = sessionStorage.getItem("title");
+  document.querySelector(".inCompleteAuthor").innerText = `Author: ${sessionStorage.getItem("author")}`;
+  document.querySelector(".inCompleteYear").innerText = `Year: ${sessionStorage.getItem("year")}`;  
 }
 
 // Function complete read
 function completeRead () {
-  let completeTitle = document.querySelector("titleCompleteList");
-  let completeAuthor = document.querySelector("authorCompleteList");
-  let completeYear = document.querySelector("yearCompleteList");
-  completeTitle.innerText = sessionStorage.getItem("title");
-  completeAuthor.innerText = `Author: ${sessionStorage.getItem("author")}`;
-  completeYear.innerText = `Year: ${sessionStorage.getItem("year")}`;     
+  document.querySelector(".completeHidden").removeAttribute("hidden");
+
+  document.querySelector(".completeTitle").innerText = sessionStorage.getItem("title");
+  document.querySelector(".completeAuthor").innerText = `Author: ${sessionStorage.getItem("author")}`;
+  document.querySelector(".completeYear").innerText = `Year: ${sessionStorage.getItem("year")}`;    
 }
 
 // Initialize 
@@ -75,7 +73,5 @@ window.addEventListener('load', function () {
 // Button submit
 buttonBookSubmit.addEventListener('click', function () {
   addValue();
-  sessionStorage.getItem("isComplete") == false ? 
-  (document.querySelector("inCompleteHidden").removeAttribute("hidden"), inCompleteRead()):
-  (document.querySelector("completeHidden").removeAttribute("hidden"), completeRead());
+  sessionStorage.getItem("isComplete") == false ? inCompleteRead() : completeRead();
 })
