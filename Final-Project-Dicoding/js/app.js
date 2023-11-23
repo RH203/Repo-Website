@@ -1,5 +1,5 @@
 // Declare variables
-const buttonBookSubmit = document.getElementById("bookSubmit");
+const buttonBookSubmit = document.getElementById("inputBook");
 const buttonSearchSubmit = document.getElementById("searchSubmit");
 const editButtonIncomplete = document.getElementById('editButtonIncomplete');
 const days = [
@@ -49,29 +49,34 @@ function addValue () {
 
 // Function incomplete read
 function inCompleteRead () {
-  document.querySelector(".inCompleteHidden").removeAttribute("hidden");
-  
-  document.querySelector(".inCompleteTitle").innerText = sessionStorage.getItem("title");
+  document.querySelector(".inCompleteHidden").style.display = "block";
+  document.querySelector(".inCompleteTitle").innerText = `${sessionStorage.getItem("title")}`;
   document.querySelector(".inCompleteAuthor").innerText = `Author: ${sessionStorage.getItem("author")}`;
-  document.querySelector(".inCompleteYear").innerText = `Year: ${sessionStorage.getItem("year")}`;  
+  document.querySelector(".inCompleteYear").innerText = `Year: ${sessionStorage.getItem("year")}`;
 }
 
 // Function complete read
 function completeRead () {
-  document.querySelector(".completeHidden").removeAttribute("hidden");
-
-  document.querySelector(".completeTitle").innerText = sessionStorage.getItem("title");
+  document.querySelector(".completeHidden").style.display = "block";
+  document.querySelector(".completeTitle").innerText = `${sessionStorage.getItem("title")}`;
   document.querySelector(".completeAuthor").innerText = `Author: ${sessionStorage.getItem("author")}`;
   document.querySelector(".completeYear").innerText = `Year: ${sessionStorage.getItem("year")}`;    
 }
 
 // Initialize 
-window.addEventListener('load', function () {
+window.addEventListener('load', function (event) {
+  event.preventDefault();
   typeof(Storage) !== "undefined" ? init() : console.log(`Browser tidak support`);
+  document.querySelector(".inCompleteHidden").style.display = "none";
+  document.querySelector(".completeHidden").style.display = "none";
+  document.querySelector("#editIncompleteBookshelfList").style.display = "none";
+  document.querySelector("#editCompleteBookshelfList").style.display = "none";
 })
 
 // Button submit
-buttonBookSubmit.addEventListener('click', function () {
-  addValue();
-  sessionStorage.getItem("isComplete") == false ? inCompleteRead() : completeRead();
+buttonBookSubmit.addEventListener('submit', function (event) {
+  event.preventDefault(); 
+  sessionStorage.getItem("isComplete") == false ? 
+  (addValue(), inCompleteRead()):
+  (addValue(), completeRead());
 })
