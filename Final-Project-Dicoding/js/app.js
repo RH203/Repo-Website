@@ -33,39 +33,42 @@ function init () {
 }
 
 // function setItem
-function addValue () {
-  let title = document.getElementById("inputBookTitle").value;
-  let author = document.getElementById("inputBookAuthor").value;
-  let year = document.getElementById("inputBookYear").value;
-  let isComplete = document.getElementById("inputBookIsComplete").checked;
-  let key = +new Date();
+// function addValue () {
+//   let title = document.getElementById("inputBookTitle").value;
+//   let author = document.getElementById("inputBookAuthor").value;
+//   let year = document.getElementById("inputBookYear").value;
+//   let isComplete = document.getElementById("inputBookIsComplete").checked;
+//   let key = +new Date();
 
-  sessionStorage.setItem("key", key); 
-  sessionStorage.setItem("title", title);
-  sessionStorage.setItem("author", author); 
-  sessionStorage.setItem("year", year); 
-  sessionStorage.setItem("isComplete", isComplete);
+//   sessionStorage.setItem("key", JSON.stringify(key)); 
+//   sessionStorage.setItem("title", JSON.stringify(title));
+//   sessionStorage.setItem("author", JSON.stringify(author)); 
+//   sessionStorage.setItem("year", JSON.stringify(year)); 
+//   sessionStorage.setItem("isComplete", JSON.stringify(isComplete));
+// }
+let addValue = () => {
+  
 }
+document.getElementById("inputBookTitle").sessionStorage.setItem("key", JSON.stringify(key));
 
 // Function incomplete read
 function inCompleteRead () {
   document.querySelector(".inCompleteHidden").style.display = "block";
-  document.querySelector(".inCompleteTitle").innerText = `${sessionStorage.getItem("title")}`;
-  document.querySelector(".inCompleteAuthor").innerText = `Author: ${sessionStorage.getItem("author")}`;
-  document.querySelector(".inCompleteYear").innerText = `Year: ${sessionStorage.getItem("year")}`;
+  document.getElementsByClassName("inCompleteTitle").innerHTML = `${}`;
+  document.getElementsByClassName("inCompleteAuthor").innerText = `Author: ${sessionStorage.getItem("author")}`;
+  document.getElementsByClassName("inCompleteYear").innerText = `Year: ${sessionStorage.getItem("year")}`;
 }
 
 // Function complete read
 function completeRead () {
   document.querySelector(".completeHidden").style.display = "block";
-  document.querySelector(".completeTitle").innerText = `${sessionStorage.getItem("title")}`;
-  document.querySelector(".completeAuthor").innerText = `Author: ${sessionStorage.getItem("author")}`;
-  document.querySelector(".completeYear").innerText = `Year: ${sessionStorage.getItem("year")}`;    
+  document.getElementsByClassName("completeTitle").innerText = `${sessionStorage.getItem("title")}`;
+  document.getElementsByClassName("completeAuthor").innerText = `Author: ${sessionStorage.getItem("author")}`;
+  document.getElementsByClassName("completeYear").innerText = `Year: ${sessionStorage.getItem("year")}`;    
 }
 
 // Initialize 
 window.addEventListener('load', function (event) {
-  event.preventDefault();
   typeof(Storage) !== "undefined" ? init() : console.log(`Browser tidak support`);
   document.querySelector(".inCompleteHidden").style.display = "none";
   document.querySelector(".completeHidden").style.display = "none";
@@ -76,7 +79,6 @@ window.addEventListener('load', function (event) {
 // Button submit
 buttonBookSubmit.addEventListener('submit', function (event) {
   event.preventDefault(); 
-  sessionStorage.getItem("isComplete") == false ? 
-  (addValue(), inCompleteRead()):
-  (addValue(), completeRead());
+  addValue();
+  sessionStorage.getItem("isComplete") == false ? inCompleteRead() : completeRead();
 })
