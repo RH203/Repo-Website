@@ -25,6 +25,7 @@
     <!-- Header close -->
 
     <main>
+      <!-- Input bookshelf-->
       <section class="input_section">
         <h2>Masukkan Buku Baru</h2>
         <form id="inputBook">
@@ -65,7 +66,7 @@
         <h2>Belum selesai dibaca</h2>
 
         <div id="incompleteBookshelfList" class="book_list">
-          <article class="book_item inCompleteHidden" hidden>
+          <article class="book_item inCompleteHidden">
             <h3 class="titleIncompleteList"></h3>
             <p class="authorIncompleteList"></p>
             <p class="yearIncompleteList"></p>
@@ -80,10 +81,10 @@
         </section>
 
         <!-- Edit section incomplete-->
-        <section class="book_shelf" hidden>
+        <section class="book_shelf" id="editIncompleteBookshelfList">
           <h2>Menu Edit</h2>
 
-          <div id="editIncompleteBookshelfList">
+          <div>
             <label for="titleIncomplete">Title:</label>
             <input id="titleIncomplete" type="text" required>
             <label for="authorIncomplete">Author:</label>
@@ -99,10 +100,10 @@
           <h2>Selesai dibaca</h2>
         
           <div id="completeBookshelfList" class="book_list">
-            <article class="book_item completeHidden" hidden>
-              <h3 class="titleCompleteList"></h3>
-              <p class="authorCompleteList"></p>
-              <p class="yearCompleteList"></p>
+            <article class="book_item completeHidden">
+              <h3 class="titleComplete"></h3>
+              <p class="authorComplete"></p>
+              <p class="yearComplete"></p>
             
               <div class="action">
                 <button class="green">Belum selesai di Baca</button>
@@ -114,10 +115,10 @@
         </section>
 
         <!-- Edit section complete-->
-        <section class="book_shelf" hidden>
+        <section class="book_shelf" id="editCompleteBookshelfList">
           <h2>Menu Edit</h2>
 
-          <div id="editCompleteBookshelfList">
+          <div>
             <label for="titleComplete">Title:</label>
             <input id="titleComplete" type="text" required>
             <label for="authorComplete">Author:</label>
